@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_seeker"
+            app:startDestination="@id/searchSeeker">
+
+    <fragment
+        android:id="@+id/searchSeeker"
+        android:name="com.projects.mycompany.cary.careseeker.search.SearchSeeker"
+        android:label="Cary"
+        tools:layout="@layout/fragment_search_seeker">
+        <action
+            android:id="@+id/action_searchSeeker_to_giverDetails"
+            app:destination="@id/giverDetails"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@+id/searchSeeker" />
+        <action
+            android:id="@+id/action_searchSeeker_to_seekerFilter"
+            app:destination="@id/seekerFilter"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@+id/searchSeeker" />
+    </fragment>
+    <fragment
+        android:id="@+id/seekerChat"
+        android:name="com.projects.mycompany.cary.chat.SeekerChat"
+        android:label="Cary"
+        tools:layout="@layout/fragment_seeker_chat" >
+        <argument
+            android:name="care_giver"
+            app:argType="com.projects.mycompany.cary.models.CareGiver" />
+        <action
+            android:id="@+id/action_seekerChat_to_giverDetails"
+            app:destination="@id/giverDetails"
+            app:popUpTo="@id/seekerChat" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileSeeker"
+        android:name="com.projects.mycompany.cary.careseeker.profile.ProfileSeeker"
+        android:label="Cary"
+        tools:layout="@layout/fragment_profile_seeker">
+        <action
+            android:id="@+id/action_profileSeeker_to_seekerSettings"
+            app:destination="@id/seekerSettings"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@+id/profileSeeker" />
+        <action
+            android:id="@+id/action_profileSeeker_to_jobDetails"
+            app:destination="@id/jobDetails"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@+id/profileSeeker" />
+    </fragment>
+    <fragment
+        android:id="@+id/giverDetails"
+        android:name="com.projects.mycompany.cary.careseeker.giverdetails.GiverDetails"
+        android:label="Details"
+        tools:layout="@layout/fragment_giver_details">
+        <argument
+            android:name="care_giver"
+            app:argType="com.projects.mycompany.cary.models.CareGiver" />
+        <action
+            android:id="@+id/action_giverDetails_to_aboutGiverDetails"
+            app:destination="@id/aboutGiverDetails"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@+id/giverDetails" />
+        <action
+            android:id="@+id/action_giverDetails_to_giverReviews"
+            app:destination="@id/giverReviews"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@+id/giverDetails" />
+        <action
+            android:id="@+id/action_giverDetails_to_rateGiverFragment"
+            app:destination="@id/rateGiverFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@+id/giverDetails" />
+        <action
+            android:id="@+id/action_giverDetails_to_chatFragment"
+            app:destination="@id/seekerChat"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/searchSeeker"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/seekerFilter"
+        android:name="com.projects.mycompany.cary.careseeker.filter.SeekerFilter"
+        android:label="Filter"
+        tools:layout="@layout/fragment_seeker_filter" >
+        <action
+            android:id="@+id/action_seekerFilter_to_searchSeeker"
+            app:destination="@id/searchSeeker"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@+id/seekerFilter"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/seekerSettings"
+        android:name="com.projects.mycompany.cary.careseeker.settings.SeekerSettings"
+        android:label="Settings"
+        tools:layout="@layout/fragment_seeker_settings">
+        <action
+            android:id="@+id/action_seekerSettings_to_editSeekerProfile"
+            app:destination="@id/editSeekerProfile"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@+id/seekerSettings" />
+        <action
+            android:id="@+id/action_seekerSettings_to_deleteCareSeekerData"
+            app:destination="@id/deleteCareSeekerData" />
+    </fragment>
+    <fragment
+        android:id="@+id/editSeekerProfile"
+        android:name="com.projects.mycompany.cary.careseeker.edit.EditSeekerProfile"
+        android:label="Edit profile"
+        tools:layout="@layout/fragment_edit_seeker_profile" />
+    <fragment
+        android:id="@+id/aboutGiverDetails"
+        android:name="com.projects.mycompany.cary.careseeker.giverabout.AboutGiverDetails"
+        android:label="About"
+        tools:layout="@layout/fragment_about_giver_details" >
+        <argument
+            android:name="aboutCareGiver"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/giverReviews"
+        android:name="com.projects.mycompany.cary.reviews.GiverReviews"
+        android:label="Reviews"
+        tools:layout="@layout/fragment_giver_reviews" >
+        <argument
+            android:name="giver_id"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/rateGiverFragment"
+        android:name="com.projects.mycompany.cary.careseeker.rategiver.RateGiverFragment"
+        android:label="Rate"
+        tools:layout="@layout/fragment_rate_giver" >
+        <argument
+            android:name="reviewed_id"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/jobDetails"
+        android:name="com.projects.mycompany.cary.careseeker.offerdetails.OfferDetails"
+        android:label="Offer Details"
+        tools:layout="@layout/fragment_offer_details" />
+    <fragment
+        android:id="@+id/seekerInbox"
+        android:name="com.projects.mycompany.cary.careseeker.inbox.SeekerInbox"
+        android:label="Cary"
+        tools:layout="@layout/fragment_seeker_inbox" >
+        <action
+            android:id="@+id/action_seekerInbox_to_seekerChat"
+            app:destination="@id/seekerChat"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popUpTo="@id/seekerInbox" />
+    </fragment>
+    <fragment
+        android:id="@+id/deleteCareSeekerData"
+        android:name="com.projects.mycompany.cary.careseeker.deleteaccount.DeleteCareSeekerData"
+        tools:layout="@layout/fragment_delete_care_seeker_data" />
+</navigation>

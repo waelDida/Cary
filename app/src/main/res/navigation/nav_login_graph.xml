@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_sign_up_graph"
+    app:startDestination="@id/loginFragment">
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.projects.mycompany.cary.login.login.LoginFragment"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@+id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.projects.mycompany.cary.login.signup.SignUpFragment"
+        android:label="Sign Up (1/4)"
+        tools:layout="@layout/fragment_sign_up">
+        <action
+            android:id="@+id/action_signUpFragment_to_choiceUserFragment"
+            app:destination="@id/choiceUserFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@+id/signUpFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/choiceUserFragment"
+        android:name="com.projects.mycompany.cary.login.userType.ChoiceUserFragment"
+        android:label="Sign Up (2/4)"
+        tools:layout="@layout/fragment_choice_user">
+        <action
+            android:id="@+id/action_choiceUserFragment_to_giverCategoryFragment"
+            app:destination="@id/giverCategoryFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@+id/choiceUserFragment" />
+        <action
+            android:id="@+id/action_choiceUserFragment_to_seekerCategoryFragment"
+            app:destination="@id/seekerCategoryFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@+id/choiceUserFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/giverCategoryFragment"
+        android:name="com.projects.mycompany.cary.login.giverCategories.GiverCategoryFragment"
+        android:label="Sign UP (3/4)"
+        tools:layout="@layout/fragment_giver_category">
+        <action
+            android:id="@+id/action_giverCategoryFragment_to_giverInfo"
+            app:destination="@id/giverInfo"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@+id/giverCategoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/seekerCategoryFragment"
+        android:name="com.projects.mycompany.cary.login.seekerCategory.SeekerCategoryFragment"
+        android:label="Sign Up (3/4)"
+        tools:layout="@layout/fragment_seeker_category">
+        <action
+            android:id="@+id/action_seekerCategoryFragment_to_seekerInfo"
+            app:destination="@id/seekerInfo"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@+id/seekerCategoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/giverInfo"
+        android:name="com.projects.mycompany.cary.login.giverInfo.GiverInfo"
+        android:label="Sign Up (4/4)"
+        tools:layout="@layout/fragment_giver_info" />
+    <fragment
+        android:id="@+id/seekerInfo"
+        android:name="com.projects.mycompany.cary.login.seekerInfo.SeekerInfo"
+        android:label="Sign Up (4/4)"
+        tools:layout="@layout/fragment_seeker_info" />
+</navigation>

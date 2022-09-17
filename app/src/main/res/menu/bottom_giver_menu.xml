@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/searchGiver"
+        android:icon="@drawable/ic_search"
+        android:title="@string/search"
+        android:visible="true" />
+    <item
+        android:id="@+id/giverInboxFragment"
+        android:icon="@drawable/ic_chat"
+        android:title="@string/inbox"
+        android:visible="true" />
+    <item
+        android:id="@+id/profileGiver"
+        android:icon="@drawable/ic_person"
+        android:title="@string/profile"
+        android:visible="true" />
+</menu>

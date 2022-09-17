@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "50761933174",
+    "firebase_url": "https://cary-a69c0.firebaseio.com",
+    "project_id": "cary-a69c0",
+    "storage_bucket": "cary-a69c0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:50761933174:android:3ecec4695703803b575a57",
+        "android_client_info": {
+          "package_name": "com.projects.mycompany.cary"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "50761933174-k79kn95e35djdslvu8gcem386om45ik2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCP5-H5gsX8RmA7DsyyaiHHH8JadOlB9E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "50761933174-k79kn95e35djdslvu8gcem386om45ik2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
